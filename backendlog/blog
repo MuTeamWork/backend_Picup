@@ -1,0 +1,60 @@
+2023-09-14T18:55:24.257+08:00  INFO 2868 --- [main] c.regulus.filedemo.FileDemoApplication   : Starting FileDemoApplication using Java 18.0.2 with PID 2868 (D:\springboot-study\file-demo\target\classes started by zsy in D:\springboot-study\file-demo)
+2023-09-14T18:55:24.258+08:00  INFO 2868 --- [main] c.regulus.filedemo.FileDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-14T18:55:24.816+08:00  INFO 2868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8989 (http)
+2023-09-14T18:55:24.822+08:00  INFO 2868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-14T18:55:24.823+08:00  INFO 2868 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-14T18:55:24.878+08:00  INFO 2868 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-14T18:55:24.878+08:00  INFO 2868 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 585 ms
+2023-09-14T18:55:25.078+08:00  INFO 2868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8989 (http) with context path ''
+2023-09-14T18:55:25.085+08:00  INFO 2868 --- [main] c.regulus.filedemo.FileDemoApplication   : Started FileDemoApplication in 1.153 seconds (process running for 1.595)
+2023-09-14T18:55:48.178+08:00  INFO 2868 --- [http-nio-8989-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-14T18:55:48.179+08:00  INFO 2868 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-14T18:55:48.180+08:00  INFO 2868 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-14T19:09:31.370+08:00  INFO 10288 --- [main] c.regulus.filedemo.FileDemoApplication   : Starting FileDemoApplication using Java 18.0.2 with PID 10288 (D:\springboot-study\file-demo\target\classes started by zsy in D:\springboot-study\file-demo)
+2023-09-14T19:09:31.371+08:00  INFO 10288 --- [main] c.regulus.filedemo.FileDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-14T19:09:31.908+08:00  INFO 10288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8989 (http)
+2023-09-14T19:09:31.917+08:00  INFO 10288 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-14T19:09:31.918+08:00  INFO 10288 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-14T19:09:31.971+08:00  INFO 10288 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-14T19:09:31.972+08:00  INFO 10288 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 569 ms
+2023-09-14T19:09:32.182+08:00  INFO 10288 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8989 (http) with context path ''
+2023-09-14T19:09:32.188+08:00  INFO 10288 --- [main] c.regulus.filedemo.FileDemoApplication   : Started FileDemoApplication in 1.249 seconds (process running for 2.011)
+2023-09-14T19:10:47.970+08:00  INFO 10288 --- [http-nio-8989-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-14T19:10:47.970+08:00  INFO 10288 --- [http-nio-8989-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-14T19:10:47.971+08:00  INFO 10288 --- [http-nio-8989-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-14T19:15:11.979+08:00  INFO 4936 --- [main] c.regulus.filedemo.FileDemoApplication   : Starting FileDemoApplication using Java 18.0.2 with PID 4936 (D:\springboot-study\file-demo\target\classes started by zsy in D:\springboot-study\file-demo)
+2023-09-14T19:15:11.980+08:00  INFO 4936 --- [main] c.regulus.filedemo.FileDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-14T19:15:12.578+08:00  INFO 4936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8989 (http)
+2023-09-14T19:15:12.584+08:00  INFO 4936 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-14T19:15:12.584+08:00  INFO 4936 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-14T19:15:12.645+08:00  INFO 4936 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-14T19:15:12.645+08:00  INFO 4936 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 624 ms
+2023-09-14T19:15:12.887+08:00  INFO 4936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8989 (http) with context path ''
+2023-09-14T19:15:12.894+08:00  INFO 4936 --- [main] c.regulus.filedemo.FileDemoApplication   : Started FileDemoApplication in 1.24 seconds (process running for 2.177)
+2023-09-14T19:15:50.522+08:00  INFO 4936 --- [http-nio-8989-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-14T19:15:50.523+08:00  INFO 4936 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-14T19:15:50.524+08:00  INFO 4936 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-09-14T19:35:46.812+08:00  INFO 19520 --- [main] c.regulus.filedemo.FileDemoApplication   : Starting FileDemoApplication using Java 18.0.2 with PID 19520 (D:\springboot-study\file-demo\target\classes started by zsy in D:\springboot-study\file-demo)
+2023-09-14T19:35:46.817+08:00  INFO 19520 --- [main] c.regulus.filedemo.FileDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-14T19:35:48.263+08:00  INFO 19520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8989 (http)
+2023-09-14T19:35:48.276+08:00  INFO 19520 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-14T19:35:48.277+08:00  INFO 19520 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-14T19:35:48.394+08:00  INFO 19520 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-14T19:35:48.394+08:00  INFO 19520 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1442 ms
+2023-09-14T19:35:48.818+08:00  INFO 19520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8989 (http) with context path ''
+2023-09-14T19:35:48.832+08:00  INFO 19520 --- [main] c.regulus.filedemo.FileDemoApplication   : Started FileDemoApplication in 3.292 seconds (process running for 4.772)
+2023-09-14T19:36:09.344+08:00  INFO 19520 --- [http-nio-8989-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-14T19:36:09.344+08:00  INFO 19520 --- [http-nio-8989-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-14T19:36:09.345+08:00  INFO 19520 --- [http-nio-8989-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-14T19:37:17.125+08:00  INFO 6784 --- [main] c.regulus.filedemo.FileDemoApplication   : Starting FileDemoApplication using Java 18.0.2 with PID 6784 (D:\springboot-study\file-demo\target\classes started by zsy in D:\springboot-study\file-demo)
+2023-09-14T19:37:17.136+08:00  INFO 6784 --- [main] c.regulus.filedemo.FileDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-09-14T19:37:18.565+08:00  INFO 6784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8989 (http)
+2023-09-14T19:37:18.575+08:00  INFO 6784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-14T19:37:18.576+08:00  INFO 6784 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-14T19:37:18.680+08:00  INFO 6784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-14T19:37:18.681+08:00  INFO 6784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1391 ms
+2023-09-14T19:37:19.057+08:00  INFO 6784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8989 (http) with context path ''
+2023-09-14T19:37:19.069+08:00  INFO 6784 --- [main] c.regulus.filedemo.FileDemoApplication   : Started FileDemoApplication in 2.702 seconds (process running for 3.698)
+2023-09-14T19:37:20.457+08:00  INFO 6784 --- [http-nio-8989-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-14T19:37:20.458+08:00  INFO 6784 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-14T19:37:20.458+08:00  INFO 6784 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
