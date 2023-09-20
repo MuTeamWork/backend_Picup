@@ -20,8 +20,11 @@ public class FileService {
     @Value("${file-demo.domain}")
     private String domain;
 
-    @Value("${file-demo.prefix}")
-    private String prefix;
+    @Value("${file-demo.prefix-image}")
+    private String prefixImage;
+
+    @Value("${file-demo.prefix-thumbnail}")
+    private String prefixThu;
 
     @Value("${file-demo.file-image-path}")
     private String fileImagePath;
@@ -67,10 +70,10 @@ public class FileService {
                 .toFile(b);
 
         //原图
-        String url0 = domain + prefix + imageName;
+        String url0 = domain + prefixImage + imageName;
 
         //缩略图
-        String url1 = domain + prefix + thumbnailName;
+        String url1 = domain + prefixThu + thumbnailName;
 
 
         return new ImageInfo(originalFilename,url0,url1);

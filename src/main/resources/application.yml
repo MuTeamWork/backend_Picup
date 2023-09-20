@@ -31,6 +31,7 @@ logging:
 
 file-demo:
   domain: http://localhost:8989
-  prefix: /p/
+  prefix-image: /image/
+  prefix-thumbnail: /thu/
   file-image-path: D:\springboot-study\file-demo\file\image\
   file-thumbnail-path: D:\springboot-study\file-demo\file\thumbnail\
