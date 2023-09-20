@@ -22,7 +22,7 @@ public class FileConfig implements WebMvcConfigurer {
     @Value("${file-demo.prefix}")
     private String prefix;
 
-    @Value("${file-demo.file-path}")
+    @Value("${file-demo.file-image-path}")
     private String filePath;
 
     @Override

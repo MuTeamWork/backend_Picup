@@ -1,5 +1,7 @@
 package com.regulus.filedemo.service;
 
+import com.regulus.filedemo.entity.ImageInfo;
+import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -8,16 +10,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-09-14
- */
 
+/**
+ *
+ */
 @Service
 public class FileService {
 
@@ -27,8 +23,11 @@ public class FileService {
     @Value("${file-demo.prefix}")
     private String prefix;
 
-    @Value("${file-demo.file-path}")
-    private String filePath;
+    @Value("${file-demo.file-image-path}")
+    private String fileImagePath;
+
+    @Value("${file-demo.file-thumbnail-path}")
+    private  String fileThumbnailPath;
 
     /**
      * 1.本地存储图片
@@ -38,7 +37,7 @@ public class FileService {
      * @param file
      * @return
      */
-    public String upload(MultipartFile file) throws IOException {
+    public ImageInfo uploadImage(MultipartFile file) throws IOException {
         String originalFilename = file.getOriginalFilename();
 
         //获取原始文件名，用 . 分隔开
@@ -48,15 +47,32 @@ public class FileService {
         String extendName = split[split.length - 1];
 
         //UUID作为保存名称
-        String fileName = UUID.randomUUID().toString() + "." + extendName;
+        String imageName = UUID.randomUUID().toString() + "." + extendName;
+
+        //UUID作为保存名称
+        String thumbnailName = UUID.randomUUID().toString() + ".jpg";
 
         //保存到本地路径
-        String pathName = filePath + fileName;
+        String pathName = fileImagePath + imageName;
 
-        //返回给前端的url
-        String url = domain + prefix + fileName;
+
 
         file.transferTo(new File(pathName));
-        return url;
+
+        String a = fileImagePath + imageName;
+        String b = fileThumbnailPath + thumbnailName;
+        Thumbnails.of(a).scale(0.5f,0.1f)
+                .outputFormat("jpg")
+                .outputQuality(0.01f)
+                .toFile(b);
+
+        //原图
+        String url0 = domain + prefix + imageName;
+
+        //缩略图
+        String url1 = domain + prefix + thumbnailName;
+
+
+        return new ImageInfo(originalFilename,url0,url1);
     }
 }

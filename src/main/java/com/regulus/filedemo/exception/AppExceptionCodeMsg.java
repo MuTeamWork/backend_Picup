@@ -1,28 +1,36 @@
 package com.regulus.filedemo.exception;
 
-
-
+/**
+ * <p>
+ * TODO
+ * <p>
+ *
+ * @author zsy
+ * @version TODO
+ * @since 2023-09-20
+ */
 public enum AppExceptionCodeMsg {
+    SUCCESS(200, "success"),
+    FAIL(501, "failed"),
+    REQUEST_ERROR(400, "Request Error"),
+    NO_AUTHENTICATION(401, "No Authentication"),
+    NO_AUTHORITIES(403, "No Authorities"),
+    SERVER_ERROR(500, "Server Error"),
+    TOO_MANY_REQUESTS(429, "Too Many Requests");
 
-    INVALID_CODE(10000,"验证码无效"),
-    USERNAME_NOT_EXISTS(10001,"用户名不存在"),
-    USER_CREDIT_NOT_ENOUGH(10002,"用户积分不足");
-
-    private int code ;
-    private String msg ;
+    private final int code;
+    private final String msg;
 
     public int getCode() {
-        return code;
+        return this.code;
     }
 
     public String getMsg() {
-        return msg;
+        return this.msg;
     }
 
-
-    AppExceptionCodeMsg(int code, String msg){
+    AppExceptionCodeMsg(int code, String description) {
         this.code = code;
-        this.msg = msg;
+        this.msg = description;
     }
-
 }
