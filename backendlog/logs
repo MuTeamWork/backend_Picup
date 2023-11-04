@@ -1,0 +1,106 @@
+2023-11-04T11:41:37.028+08:00  INFO 12048 --- [main] c.regulus.filedemo.FileDemoApplication   : Starting FileDemoApplication using Java 17.0.9 with PID 12048 (D:\springboot-study\file-demo\target\classes started by zsy in D:\springboot-study\file-demo)
+2023-11-04T11:41:37.035+08:00  INFO 12048 --- [main] c.regulus.filedemo.FileDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-04T11:41:37.985+08:00  INFO 12048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04T11:41:37.986+08:00  INFO 12048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-11-04T11:41:38.011+08:00  INFO 12048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2023-11-04T11:41:38.482+08:00  INFO 12048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8989 (http)
+2023-11-04T11:41:38.493+08:00  INFO 12048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-04T11:41:38.493+08:00  INFO 12048 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-04T11:41:38.606+08:00  INFO 12048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-04T11:41:38.607+08:00  INFO 12048 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1505 ms
+2023-11-04T11:41:39.040+08:00  WARN 12048 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.regulus.filedemo.entity.UserFile ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-11-04T11:41:39.629+08:00  INFO 12048 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-11-04T11:41:39.637+08:00  INFO 12048 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-11-04T11:41:39.637+08:00  INFO 12048 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-11-04T11:41:39.637+08:00  INFO 12048 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-11-04T11:41:39.638+08:00  INFO 12048 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-11-04T11:41:39.638+08:00  INFO 12048 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-11-04T11:41:39.638+08:00  INFO 12048 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-11-04T11:41:39.638+08:00  INFO 12048 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@31006a75
+2023-11-04T11:41:39.686+08:00  INFO 12048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8989 (http) with context path ''
+2023-11-04T11:41:39.688+08:00  INFO 12048 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2023-11-04T11:41:39.688+08:00  INFO 12048 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-11-04T11:41:39.700+08:00  INFO 12048 --- [main] c.regulus.filedemo.FileDemoApplication   : Started FileDemoApplication in 3.158 seconds (process running for 4.082)
+2023-11-04T11:41:47.324+08:00  INFO 12048 --- [http-nio-8989-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04T11:41:47.325+08:00  INFO 12048 --- [http-nio-8989-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-04T11:41:47.326+08:00  INFO 12048 --- [http-nio-8989-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-04T11:41:47.471+08:00  WARN 12048 --- [http-nio-8989-exec-2] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2023-11-04T11:41:47.472+08:00  INFO 12048 --- [http-nio-8989-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-04T11:41:47.590+08:00  INFO 12048 --- [http-nio-8989-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e0ab06e
+2023-11-04T11:41:47.591+08:00  INFO 12048 --- [http-nio-8989-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-04T11:45:31.589+08:00  INFO 12048 --- [http-nio-8989-exec-9] c.r.f.exception.GlobalExceptionHandler   : Code：500,Exception: Server Error
+2023-11-04T11:45:31.590+08:00 ERROR 12048 --- [http-nio-8989-exec-9] c.r.f.exception.GlobalExceptionHandler   : Cause：null,Message: 未能读取到有效 token
+2023-11-04T11:45:37.436+08:00  INFO 12048 --- [http-nio-8989-exec-10] c.r.f.exception.GlobalExceptionHandler   : Code：500,Exception: Server Error
+2023-11-04T11:45:37.437+08:00 ERROR 12048 --- [http-nio-8989-exec-10] c.r.f.exception.GlobalExceptionHandler   : Cause：null,Message: 未能读取到有效 token
+2023-11-04T11:46:12.864+08:00  INFO 12048 --- [http-nio-8989-exec-1] c.r.f.exception.GlobalExceptionHandler   : Code：500,Exception: Server Error
+2023-11-04T11:46:12.865+08:00 ERROR 12048 --- [http-nio-8989-exec-1] c.r.f.exception.GlobalExceptionHandler   : Cause：null,Message: 未能读取到有效 token
+2023-11-04T11:46:53.933+08:00  INFO 12048 --- [http-nio-8989-exec-4] c.r.f.exception.GlobalExceptionHandler   : Code：500,Exception: Server Error
+2023-11-04T11:46:53.933+08:00 ERROR 12048 --- [http-nio-8989-exec-4] c.r.f.exception.GlobalExceptionHandler   : Cause：null,Message: Request method 'GET' is not supported
+2023-11-04T11:47:23.896+08:00  INFO 12048 --- [http-nio-8989-exec-6] c.r.f.service.ImageFileServiceImp        : file successfully deleted: ImageFile(fid=1719706765363240962, fileName=IMG_20231101_113123.jpg, file=http://localhost:8989/image/7e0fec3a-cf45-4d34-a209-daac308ebde7.jpg, thumbnail=http://localhost:8989/thu/8c1198fb-9b54-45a1-9893-4dfe593c3a3a.jpg, expireTime=null)
+2023-11-04T11:47:23.908+08:00  INFO 12048 --- [http-nio-8989-exec-6] c.r.f.service.ImageFileServiceImp        : file successfully deleted: ImageFile(fid=1719876367284162561, fileName=IMG_20231101_113123.jpg, file=http://localhost:8989/image/611a82b1-a5c6-418e-879c-98b9ed9bc9ce.jpg, thumbnail=http://localhost:8989/thu/48c84d62-2b7a-4c22-bce3-675e6af38155.jpg, expireTime=null)
+2023-11-04T11:50:22.623+08:00  INFO 12048 --- [http-nio-8989-exec-10] c.r.f.exception.GlobalExceptionHandler   : Code：500,Exception: Server Error
+2023-11-04T11:50:22.623+08:00 ERROR 12048 --- [http-nio-8989-exec-10] c.r.f.exception.GlobalExceptionHandler   : Cause：com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.util.ArrayList<com.regulus.filedemo.request.ImageFileRequest>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1],Message: JSON parse error: Cannot deserialize value of type `java.util.ArrayList<com.regulus.filedemo.request.ImageFileRequest>` from Object value (token `JsonToken.START_OBJECT`)
+2023-11-04T11:54:50.425+08:00  INFO 12048 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-11-04T11:54:50.448+08:00  INFO 12048 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-11-04T11:54:50.448+08:00  INFO 12048 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-11-04T11:54:50.448+08:00  INFO 12048 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-11-04T11:54:50.449+08:00  INFO 12048 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-11-04T11:54:50.587+08:00  INFO 12048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-04T11:54:50.591+08:00  INFO 12048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-04T11:54:56.435+08:00  INFO 19772 --- [main] c.regulus.filedemo.FileDemoApplication   : Starting FileDemoApplication using Java 17.0.9 with PID 19772 (D:\springboot-study\file-demo\target\classes started by zsy in D:\springboot-study\file-demo)
+2023-11-04T11:54:56.436+08:00  INFO 19772 --- [main] c.regulus.filedemo.FileDemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-04T11:54:57.020+08:00  INFO 19772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-11-04T11:54:57.023+08:00  INFO 19772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-11-04T11:54:57.061+08:00  INFO 19772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2023-11-04T11:54:57.488+08:00  INFO 19772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8989 (http)
+2023-11-04T11:54:57.494+08:00  INFO 19772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-04T11:54:57.495+08:00  INFO 19772 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-04T11:54:57.572+08:00  INFO 19772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-04T11:54:57.573+08:00  INFO 19772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1103 ms
+2023-11-04T11:54:57.964+08:00  WARN 19772 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.regulus.filedemo.entity.UserFile ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-11-04T11:54:58.749+08:00  INFO 19772 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2023-11-04T11:54:58.756+08:00  INFO 19772 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-11-04T11:54:58.756+08:00  INFO 19772 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2023-11-04T11:54:58.758+08:00  INFO 19772 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2023-11-04T11:54:58.759+08:00  INFO 19772 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-11-04T11:54:58.759+08:00  INFO 19772 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2023-11-04T11:54:58.759+08:00  INFO 19772 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2023-11-04T11:54:58.759+08:00  INFO 19772 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@45c90a05
+2023-11-04T11:54:58.803+08:00  INFO 19772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8989 (http) with context path ''
+2023-11-04T11:54:58.805+08:00  INFO 19772 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2023-11-04T11:54:58.805+08:00  INFO 19772 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2023-11-04T11:54:58.813+08:00  INFO 19772 --- [main] c.regulus.filedemo.FileDemoApplication   : Started FileDemoApplication in 2.781 seconds (process running for 3.297)
+2023-11-04T11:55:04.965+08:00  INFO 19772 --- [http-nio-8989-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04T11:55:04.965+08:00  INFO 19772 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-04T11:55:04.967+08:00  INFO 19772 --- [http-nio-8989-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-11-04T11:55:06.178+08:00  WARN 19772 --- [http-nio-8989-exec-1] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2023-11-04T11:55:06.181+08:00  INFO 19772 --- [http-nio-8989-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-04T11:55:06.440+08:00  INFO 19772 --- [http-nio-8989-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c3e6a84
+2023-11-04T11:55:06.444+08:00  INFO 19772 --- [http-nio-8989-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-04T11:55:31.352+08:00  INFO 19772 --- [http-nio-8989-exec-4] c.r.f.exception.GlobalExceptionHandler   : Code：500,Exception: Server Error
+2023-11-04T11:55:31.358+08:00 ERROR 19772 --- [http-nio-8989-exec-4] c.r.f.exception.GlobalExceptionHandler   : Cause：null,Message: Cannot read the array length because "fids" is null
+2023-11-04T11:55:43.390+08:00  INFO 19772 --- [http-nio-8989-exec-6] c.r.f.service.ImageFileServiceImp        : file successfully deleted: ImageFile(fid=1720650882494705665, fileName=IMG_20231101_113123.jpg, file=http://localhost:8989/image/1cf09f33-880e-4828-8ccd-926de47d1f57.jpg, thumbnail=http://localhost:8989/thu/93aac075-cac0-4fd3-8592-e88e472d93e2.jpg, expireTime=null)
+2023-11-04T11:56:31.606+08:00  INFO 19772 --- [http-nio-8989-exec-3] c.r.f.service.ImageFileServiceImp        : file successfully deleted: ImageFile(fid=1720651072026914818, fileName=IMG_20231101_113123.jpg, file=http://localhost:8989/image/b402c7c5-da08-49a7-8fe4-f5941c4a3cf7.jpg, thumbnail=http://localhost:8989/thu/e472b7ef-857a-44e1-84fd-cd2aff386738.jpg, expireTime=null)
+2023-11-04T11:56:31.631+08:00  INFO 19772 --- [http-nio-8989-exec-3] c.r.f.service.ImageFileServiceImp        : file successfully deleted: ImageFile(fid=1720651054251454465, fileName=IMG_20231101_113123.jpg, file=http://localhost:8989/image/5b80991c-0469-4308-af7b-a953a8bc388f.jpg, thumbnail=http://localhost:8989/thu/78dee0e9-f1eb-4942-a378-091949821208.jpg, expireTime=null)
+2023-11-04T12:10:50.540+08:00  INFO 19772 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-11-04T12:10:50.578+08:00  INFO 19772 --- [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2023-11-04T12:10:50.578+08:00  INFO 19772 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2023-11-04T12:10:50.579+08:00  INFO 19772 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2023-11-04T12:10:50.579+08:00  INFO 19772 --- [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2023-11-04T12:10:50.719+08:00  INFO 19772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-04T12:10:50.724+08:00  INFO 19772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

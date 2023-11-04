@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.regulus.filedemo.mapper.ImageFileMapper">
+    <resultMap id="BaseResultMap" type="com.regulus.filedemo.entity.ImageFile">
+    </resultMap>
+
+    <select id="getFileList" resultMap="BaseResultMap" parameterType="com.regulus.filedemo.entity.ImageFile">
+        SELECT c.fid,c.expire_time,c.file,c.thumbnail,c.file_name
+        FROM  `tb_user` a
+                  LEFT JOIN  `user_file` b ON a.uid=b.uid
+                  LEFT JOIN `tb_file` c ON b.fid=c.fid
+        WHERE a.uid = #{uid};
+    </select>
+
+</mapper>

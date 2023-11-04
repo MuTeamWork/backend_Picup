@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.regulus.filedemo.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.regulus.filedemo.entity.User">
+    </resultMap>
+    <resultMap id="Setting" type="com.regulus.filedemo.entity.Setting">
+    </resultMap>
+
+    <select id="querySettingById" resultMap="Setting" parameterType="com.regulus.filedemo.entity.User">
+        SELECT b.exif,b.expire_time
+        FROM  `tb_user` a
+                  LEFT JOIN  `tb_setting` b ON a.uid=b.uid
+        WHERE a.uid = #{uid};
+    </select>
+
+</mapper>

@@ -1,8 +1,6 @@
 package com.regulus.filedemo.response;
 
-import cn.hutool.json.JSONUtil;
-import com.regulus.filedemo.entity.ImageInfo;
-import com.regulus.filedemo.exception.AppException;
+
 import com.regulus.filedemo.exception.AppExceptionCodeMsg;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -42,7 +40,7 @@ public class Resp<T> implements Serializable {
 
     public static <T> Resp success(T data){
         return new Resp<>(AppExceptionCodeMsg.SUCCESS.getCode(),
-                AppExceptionCodeMsg.SUCCESS.getMsg(),data);
+                AppExceptionCodeMsg.SUCCESS.getMsg(), data);
     }
 
     public static <T> Resp error(AppExceptionCodeMsg appExceptionCodeMsg){
