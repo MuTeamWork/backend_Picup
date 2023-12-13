@@ -1,5 +1,6 @@
 package com.regulus.filedemo.controller;
 
+import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
 import com.regulus.filedemo.entity.Setting;
@@ -16,6 +17,7 @@ import com.regulus.filedemo.service.SettingServiceImp;
 import com.regulus.filedemo.service.UserServiceImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,6 +53,7 @@ public class UserController {
     public Resp<String> doLogin(@RequestBody UserLoginRequest userLoginRequest) {
 
         User user0 = userServiceImp.userLogin(userLoginRequest.getUsername(),userLoginRequest.getPassword());
+
         StpUtil.login(user0.getUid());
         StpUtil.getSession().set(USER_INFO,user0);
         return Resp.success(StpUtil.getTokenValue());
@@ -117,6 +120,7 @@ public class UserController {
     //获取所有权限 http://localhost:8989/user/getRole
     @RequestMapping("/getRole")
     public SaResult getRole() {
+        // TODO: 其他按照这个来改，哪个什么逼satoken真的P用没有！！！！！
         return SaResult.data(StpUtil.getRoleList());
     }
 }

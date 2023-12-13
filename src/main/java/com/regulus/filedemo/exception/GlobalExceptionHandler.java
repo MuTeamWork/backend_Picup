@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
 
         //如果拦截的异常不是我们自定义的异常(例如：数据库主键冲突)
         log.info("Code：{},Exception: {}",500,"Server Error");
-        log.error("Cause：{},Message: {}", e.getCause(), e.getMessage());
+        log.error("Cause：{},Message: {}", "null",e.toString());//e.getCause(), e.getMessage()
         return Resp.error(500,"服务器端异常");
     }
 }

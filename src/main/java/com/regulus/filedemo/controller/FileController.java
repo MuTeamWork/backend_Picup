@@ -58,6 +58,7 @@ public class FileController {
 
     @GetMapping("/getFileList")
     public Resp<List<ImageFile>> getFileList() {
+
         List<ImageFile> files = fileService.getFileList(Long.parseLong((String)StpUtil.getLoginId()));
         return Resp.success(files);
     }

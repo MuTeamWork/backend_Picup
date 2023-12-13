@@ -135,8 +135,10 @@ public class UserServiceImp {
         queryWrapper.eq("uid",uid)
                 .eq("password",updateUserInfoRequest.getCurrentPassword());
 
+        int flag = 0;
 
         if(updateUserInfoRequest.getCurrentPassword() != null) {
+            flag++;
             User user0 = userMapper.selectOne(queryWrapper);
             if (user0 == null) throw new AppException(AppExceptionCodeMsg.NO_AUTHENTICATION);
         }
@@ -145,24 +147,27 @@ public class UserServiceImp {
         updateWrapper.eq("uid",setting.getUid());
 
         if(updateUserInfoRequest.getMail() != null) {
+            flag++;
             StringCheckerUtil.notEmptyChecker(updateUserInfoRequest.getMail());
             updateWrapper.set("mail", updateUserInfoRequest.getMail());
         }
 
         if(updateUserInfoRequest.getUsername() != null) {
+            flag++;
             StringCheckerUtil.notEmptyChecker(updateUserInfoRequest.getUsername());
             updateWrapper.set("username", updateUserInfoRequest.getUsername());
         }
 
         if(updateUserInfoRequest.getCurrentPassword() != null && updateUserInfoRequest.getNewPassword() != null) {
+            flag++;
             StringCheckerUtil.notEmptyChecker(updateUserInfoRequest.getNewPassword());
             updateWrapper.set("password", updateUserInfoRequest.getNewPassword());
         }
+        if(flag > 0)
         userMapper.update(null,updateWrapper);
 
 
     }
-
 
     public void UserInsert(User user){
         userMapper.insert(user);

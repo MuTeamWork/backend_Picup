@@ -7,6 +7,8 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 /**
  * <p>
@@ -38,6 +40,6 @@ public class ImageFile implements Serializable {
     private String thumbnail;
 
     @TableField("expire_time")
-    private Integer expireTime;
+    private String expireTime;
 
 }

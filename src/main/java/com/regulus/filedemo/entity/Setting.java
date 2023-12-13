@@ -9,12 +9,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * <p>
- * TODO
- * <p>
- *
  * @author zsy
- * @version TODO
  * @since 2023-11-01
  */
 @Data

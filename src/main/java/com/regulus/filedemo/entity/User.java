@@ -12,9 +12,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * <p>
- * TODO
- * <p>
+ * User实体类
  *
  * @author zsy
  * @version TODO
@@ -49,6 +47,6 @@ public class User implements Serializable {
     private int role;
 
     @TableField(exist = false)
-    private  String address;
+    private String address;
 
 }
