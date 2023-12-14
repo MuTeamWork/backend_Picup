@@ -84,7 +84,7 @@ public class SaTokenConfigure implements WebMvcConfigurer {
 
 
         })).addPathPatterns("/**")
-                .excludePathPatterns("/user/register","/user/doLogin","/image/*","/thu/*");
+                .excludePathPatterns("/user/register","/user/doLogin","/image/*","/thu/*","/file/fileUpload");
     }
     }
 

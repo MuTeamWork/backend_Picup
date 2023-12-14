@@ -1,5 +1,6 @@
 package com.regulus.filedemo.service;
 
+import cn.hutool.crypto.digest.DigestUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.regulus.filedemo.entity.Setting;
@@ -34,8 +35,10 @@ public class UserServiceImp {
 
     public User userLogin(String username, String pwd){
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        // 使用 Hutool 进行 MD5 加密
+        String encryptedPassword = DigestUtil.md5Hex(pwd);
         queryWrapper.eq("username",username)
-                .eq("password",pwd); // 针对字段少的情况
+                .eq("password",encryptedPassword); // 针对字段少的情况
         User user0 = userMapper.selectOne(queryWrapper);
 
         if( user0 == null) {
@@ -54,8 +57,13 @@ public class UserServiceImp {
 
         User user = new User();
         user.setUsername(username);
-        user.setPassword(pwd);
+
+        // 使用 Hutool 进行 MD5 加密
+        String encryptedPassword = DigestUtil.md5Hex(pwd);
+
+        user.setPassword(encryptedPassword);
         user.setMail(mail);
+
         userMapper.insert(user);
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username",username)

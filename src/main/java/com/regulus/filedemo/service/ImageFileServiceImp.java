@@ -77,7 +77,7 @@ public class ImageFileServiceImp {
      * @param file
      * @return
      */
-    public ImageFile uploadImage(MultipartFile file, Long uid) throws IOException, ImageProcessingException {
+    public ImageFile uploadImage(MultipartFile file, Long uid) throws IOException {
         String originalFilename = file.getOriginalFilename();
         //获取原始文件名，用 . 分隔开
         String[] split = originalFilename.split("\\.");
@@ -93,10 +93,6 @@ public class ImageFileServiceImp {
 
         //保存到本地路径
         String pathName = fileImagePath + imageName;
-
-
-        //file.transferTo(new File(pathName));
-
 
         try {
             Path directoryImagePath = Paths.get(fileImagePath);
@@ -128,27 +124,11 @@ public class ImageFileServiceImp {
             throw e;
         }
 
-//        // 获取文件内容
-//        byte[] fileBytes = file.getBytes();
-//
-//        // 将文件保存到服务器文件夹
-//        Path filePath = Paths.get(fileImagePath, imageName);
-//        Files.write(filePath, fileBytes);
-
-
-
-
 
         Setting setting = userMapper.querySettingById(uid);
         if(setting.getExif() == 0)
         FileUtil.eraseExif(pathName,extendName);
 
-
-//        file10 = new File(pathName);
-
-//        Metadata metadata1 = ImageMetadataReader.readMetadata(file10);
-//
-//        FileUtil.setMetadata(metadata1);
 
         String a = fileImagePath + imageName;
         String b = fileThumbnailPath + thumbnailName;
@@ -156,7 +136,7 @@ public class ImageFileServiceImp {
         log.info("缩略图路径： " + b);
         Thumbnails.of(a).scale(1f,1f)
                 .outputFormat("jpg")
-                .outputQuality(0.01f)
+                .outputQuality(0.1f)
                 .toFile(b);
 
         log.info("缩略图生成成功");
@@ -206,6 +186,81 @@ public class ImageFileServiceImp {
         return file1;
     }
 
+    public ImageFile uploadWithoutLogin(MultipartFile file) throws IOException{
+
+        String originalFilename = file.getOriginalFilename();
+        //获取原始文件名，用 . 分隔开
+        String[] split = originalFilename.split("\\.");
+
+        //获取拓展名
+        String extendName = split[split.length - 1];
+
+        //UUID作为保存名称
+        String imageName = UUID.randomUUID().toString() + "." + extendName;
+
+        //UUID作为保存名称
+        String thumbnailName = UUID.randomUUID().toString() + ".jpg";
+
+        //保存到本地路径
+        String pathName = fileImagePath + imageName;
+
+        try {
+            Path directoryImagePath = Paths.get(fileImagePath);
+            Path directoryThuPath = Paths.get(fileThumbnailPath);
+
+            // 检查目录是否存在，不存在则创建目录
+            if (!Files.exists(directoryImagePath)) {
+                Files.createDirectories(directoryImagePath);
+                log.info("目录创建成功：" + fileImagePath);
+            }
+            if (!Files.exists(directoryThuPath)) {
+                Files.createDirectories(directoryImagePath);
+                log.info("目录创建成功：" + fileThumbnailPath);
+            }
+            log.info("路径存在：1." + directoryImagePath.toString() + " " + "2." + fileImagePath);
+
+            // 构建文件完整路径
+            Path filePath = directoryImagePath.resolve(imageName);
+
+            log.info("完整路径存在：1." + directoryImagePath.toString());
+
+            // 假设 fileBytes 是您从其他地方获取的文件内容的字节数组
+            byte[] fileBytes = file.getBytes();
+
+            // 将文件保存到服务器文件夹
+            Files.write(filePath, fileBytes);
+            log.info("文件保存成功！");
+        } catch (IOException e) {
+            throw e;
+        }
+
+        FileUtil.eraseExif(pathName,extendName);
+        Long timeInMillis = System.currentTimeMillis() + 3155760000000L; // 假设这是代表毫秒的时间戳
+
+        Timestamp timestamp = new Timestamp(timeInMillis);
+
+        // 定义自定义的日期时间格式
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = dateFormat.format(timestamp);
+
+        //原图
+        String url0 = domain + prefixImage + imageName;
+
+        ImageFile file1 = new ImageFile();
+        file1.setFile(url0);
+        file1.setFileName(originalFilename);
+        file1.setExpireTime(formattedDate);
+        file1.setThumbnail("null");
+        Long OriginalId = SnowflakeExample.GenerateSnowFlake();
+        Long realFid0 = OriginalId >>> 12;
+        Long fid = realFid0;
+        file1.setFid(fid);
+
+
+        imageFileMapper.insert(file1);
+        return file1;
+    }
+
     public void deleteFile(List<Long> fids, Long uid) throws IOException {
             for (Long fid : fids) {
                 QueryWrapper<UserFile> wrapper = new QueryWrapper<>();
@@ -214,11 +269,11 @@ public class ImageFileServiceImp {
                 UserFile userFile = userFileMapper.selectOne(wrapper);
 
                 if (userFile == null) {
-                    throw new AppException(AppExceptionCodeMsg.FILE_NOT_EXIST);
+                    //throw new AppException(AppExceptionCodeMsg.FILE_NOT_EXIST);
                 } else {
                     ImageFile file = imageFileMapper.selectById(fid + "");
                     if (file == null) {
-                        throw new AppException(AppExceptionCodeMsg.FILE_NOT_EXIST);
+                        //throw new AppException(AppExceptionCodeMsg.FILE_NOT_EXIST);
                     }
 
                     String fileUUID0 = file.getThumbnail();

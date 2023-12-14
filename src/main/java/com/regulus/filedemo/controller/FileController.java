@@ -44,9 +44,15 @@ public class FileController {
         if(file.isEmpty()){
             throw new AppException(AppExceptionCodeMsg.FILE_NOT_EXIST);
         }
-        ImageFile imageFile = fileService.uploadImage(file,
-                Long.parseLong((String)StpUtil.getLoginId()));
+
+        if(StpUtil.isLogin()) {
+            ImageFile imageFile = fileService.uploadImage(file,
+                    Long.parseLong((String) StpUtil.getLoginId()));
+            return Resp.success(imageFile);
+        }
+        ImageFile imageFile = fileService.uploadWithoutLogin(file);
         return Resp.success(imageFile);
+
     }
 
     @PostMapping("/fileDelete")
