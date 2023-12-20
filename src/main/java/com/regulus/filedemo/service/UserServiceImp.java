@@ -50,6 +50,10 @@ public class UserServiceImp {
     }
 
     public User userRegister(String username, String pwd, String mail){
+        QueryWrapper<User> queryWrapper0 = new QueryWrapper<>();
+        queryWrapper0.eq("username",username);
+        User u = userMapper.selectOne(queryWrapper0);
+        if(u != null) throw new AppException(AppExceptionCodeMsg.Double_ERROR);
 
         StringCheckerUtil.isValidString(username,32);
         StringCheckerUtil.isValidString(mail,50);
@@ -67,7 +71,7 @@ public class UserServiceImp {
         userMapper.insert(user);
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username",username)
-                .eq("password",pwd).eq("mail",mail);
+                .eq("password",encryptedPassword).eq("mail",mail);
 
         User user0 = userMapper.selectOne(queryWrapper);
 

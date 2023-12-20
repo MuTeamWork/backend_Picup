@@ -95,9 +95,6 @@ file-demo:
   domain: http://10.0.0.5:8989
   prefix-image: /image/
   prefix-thumbnail: /thu/
-
-
-
   file-thumbnail-path: /root/resource/thumbnail/
   file-image-path: /root/resource/image/
 

@@ -89,7 +89,7 @@ public class ImageFileServiceImp {
         String imageName = UUID.randomUUID().toString() + "." + extendName;
 
         //UUID作为保存名称
-        String thumbnailName = UUID.randomUUID().toString() + ".jpg";
+        String thumbnailName = UUID.randomUUID().toString() + "." + extendName;
 
         //保存到本地路径
         String pathName = fileImagePath + imageName;
@@ -134,10 +134,20 @@ public class ImageFileServiceImp {
         String b = fileThumbnailPath + thumbnailName;
         log.info("原图路径：" + a);
         log.info("缩略图路径： " + b);
-        Thumbnails.of(a).scale(1f,1f)
-                .outputFormat("jpg")
-                .outputQuality(0.1f)
-                .toFile(b);
+
+        if(!extendName.equals("gif")) {
+            Thumbnails.of(a).scale(1f, 1f)
+                    .outputFormat(extendName)
+                    .outputQuality(0.1f)
+                    .toFile(b);
+        }
+        else{
+
+            Thumbnails.of(a).scale(0.8f, 0.8f)
+                    .outputQuality(0.1)
+                    .outputFormat(extendName)
+                    .toFile(b);
+        }
 
         log.info("缩略图生成成功");
 
@@ -159,17 +169,28 @@ public class ImageFileServiceImp {
         file1.setFid(fid);
 
 
-        setting.setExpireTime(setting.getExpireTime() * 1000);
+        Long timeInMillis = 0L;
+        if(setting.getExpireTime() == 0){
+            timeInMillis = System.currentTimeMillis() + 3155760000000L; // 假设这是代表毫秒的时间戳
+        } else {
+            setting.setExpireTime(setting.getExpireTime() * 1000);
+            timeInMillis = System.currentTimeMillis() + setting.getExpireTime(); // 假设这是代表毫秒的时间戳
+        }
 
 
-        Long timeInMillis = System.currentTimeMillis() + setting.getExpireTime(); // 假设这是代表毫秒的时间戳
+
 
         Timestamp timestamp = new Timestamp(timeInMillis);
 
         // 定义自定义的日期时间格式
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = dateFormat.format(timestamp);
+
+        if(setting.getExpireTime() != 0)
         file1.setExpireTime(formattedDate);
+        else
+            file1.setExpireTime("unlimited");
+
 
         imageFileMapper.insert(file1);
         UserFile userFile = new UserFile();
@@ -179,9 +200,15 @@ public class ImageFileServiceImp {
         userFileMapper.insert(userFile);
 
         String value = fid + "." + uid;
-        Integer expireTime= setting.getExpireTime();
 
-        redisService.setValue(value, (long)expireTime);
+        Integer expireTime = 1000;
+
+        if(setting.getExpireTime() != 0) {
+            expireTime = setting.getExpireTime();
+            redisService.setValue(value, (long)expireTime);
+        }
+
+
 
         return file1;
     }
@@ -199,7 +226,7 @@ public class ImageFileServiceImp {
         String imageName = UUID.randomUUID().toString() + "." + extendName;
 
         //UUID作为保存名称
-        String thumbnailName = UUID.randomUUID().toString() + ".jpg";
+        String thumbnailName = UUID.randomUUID().toString() + "." + extendName;
 
         //保存到本地路径
         String pathName = fileImagePath + imageName;

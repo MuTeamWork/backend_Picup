@@ -22,7 +22,8 @@ public enum AppExceptionCodeMsg {
     MAIL_NOT_NULL(1003,"邮箱不得为空"),
     PASSWORD_NOT_ULL(1004,"密码不得为空"),
     REQUEST_NOT_EMPTY(411,"字段需要有效长度"),
-    UNPROCESSABLE_ENTITY(422,"请求数据不合法");
+    UNPROCESSABLE_ENTITY(422,"请求数据不合法"),
+    Double_ERROR(401, "用户名已存在"),;
 
 
 
