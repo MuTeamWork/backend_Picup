@@ -1,21 +1,14 @@
 package com.regulus.filedemo.scheduledtask;
 
-import com.regulus.filedemo.entity.ImageFile;
 import com.regulus.filedemo.service.ImageFileServiceImp;
-import com.regulus.filedemo.service.RedisService;
+import com.regulus.filedemo.service.RedisServiceImp;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.scheduling.annotation.SchedulingConfigurer;
-import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -34,7 +27,7 @@ import java.util.Set;
 public class ScheduledTask {
 
     @Resource
-    private RedisService redisService;
+    private RedisServiceImp redisServiceImp;
 
     @Resource
     private ImageFileServiceImp fileService;
@@ -44,7 +37,7 @@ public class ScheduledTask {
     @Scheduled(fixedRate = 1000)
     public void deleteMyMember() throws IOException {
         Set<String> members;
-        members = redisService.getValue();
+        members = redisServiceImp.getValue();
         if(members.isEmpty()) {
             //log.info("未检查到过期图片");
             return;
@@ -60,7 +53,7 @@ public class ScheduledTask {
             fids.add(fid); // 将 Long 添加到 List<Long>
             Long uid = Long.valueOf(uidTemple);
             fileService.deleteFile(fids,uid);
-            redisService.deleteMember(member);
+            redisServiceImp.deleteMember(member);
         }
 
     }

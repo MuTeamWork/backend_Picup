@@ -1,17 +1,13 @@
 package com.regulus.filedemo.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.drew.imaging.ImageProcessingException;
 import com.regulus.filedemo.entity.ImageFile;
 
 import com.regulus.filedemo.entity.Setting;
 import com.regulus.filedemo.entity.UserFile;
-import com.regulus.filedemo.exception.AppException;
-import com.regulus.filedemo.exception.AppExceptionCodeMsg;
 import com.regulus.filedemo.mapper.ImageFileMapper;
 import com.regulus.filedemo.mapper.UserFileMapper;
 import com.regulus.filedemo.mapper.UserMapper;
-import com.regulus.filedemo.request.ImageFileRequest;
 
 import com.regulus.filedemo.util.FileUtil;
 import com.regulus.filedemo.util.SnowflakeExample;
@@ -31,7 +27,6 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -67,7 +62,7 @@ public class ImageFileServiceImp {
     private UserMapper userMapper;
 
     @Resource
-    RedisService redisService;
+    RedisServiceImp redisServiceImp;
 
     /**
      * 1.本地存储图片
@@ -205,7 +200,7 @@ public class ImageFileServiceImp {
 
         if(setting.getExpireTime() != 0) {
             expireTime = setting.getExpireTime();
-            redisService.setValue(value, (long)expireTime);
+            redisServiceImp.setValue(value, (long)expireTime);
         }
 
 
