@@ -5,15 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-09-14
- */
 
 @Configuration
 public class FileConfig implements WebMvcConfigurer {

@@ -48,7 +48,6 @@ public class UserController {
     private final String USER_INFO = "userInfo";
 
 
-    // 测试登录  ---- http://localhost:8989/user/doLogin?name=zhang&pwd=123456
     @RequestMapping("/doLogin")
     public Resp<String> doLogin(@RequestBody UserLoginRequest userLoginRequest) {
 
@@ -98,26 +97,22 @@ public class UserController {
         return Resp.success();
     }
 
-    // 查询登录状态  ---- http://localhost:8989/user/isLogin
     @RequestMapping("/isLogin")
     public SaResult isLogin() {
         return SaResult.ok("是否登录：" + StpUtil.isLogin());
     }
 
-    // 查询 Token 信息  ---- http://localhost:8989/user/tokenInfo
     @RequestMapping("/tokenInfo")
     public SaResult tokenInfo() {
         return SaResult.data(StpUtil.getTokenValue());
     }
 
-    // 测试注销  ---- http://localhost:8989/user/logout
     @RequestMapping("/logout")
     public SaResult logout() {
         StpUtil.logout();
         return SaResult.ok();
     }
 
-    //获取所有权限 http://localhost:8989/user/getRole
     @RequestMapping("/getRole")
     public SaResult getRole() {
         // TODO: 其他按照这个来改，哪个什么逼satoken真的P用没有！！！！！

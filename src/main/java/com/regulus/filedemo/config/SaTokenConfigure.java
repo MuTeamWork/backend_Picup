@@ -20,20 +20,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SaTokenConfigure implements WebMvcConfigurer {
 
 
-    /**
-     * 注册 [Sa-Token 全局过滤器]
-     */
+
+     //注册 [Sa-Token 全局过滤器]
     @Bean
     public SaServletFilter getSaServletFilter() {
         return new SaServletFilter()
 
 
-                // 认证函数: 每次请求执行
-
-//                .setAuth(obj -> {
-//                    SaManager.getLog().debug("----- 请求path={}  提交token={}", SaHolder.getRequest().getRequestPath(), StpUtil.getTokenValue());
-//                    // ...
-//                })
 
                 // 异常处理函数：每次认证函数发生异常时执行此函数
 //                .setError(e -> {
@@ -80,8 +73,6 @@ public class SaTokenConfigure implements WebMvcConfigurer {
 
             // 权限校验 -- 不同模块校验不同权限
             // SaRouter.match("/user/**", r -> StpUtil.checkPermission("admin"));
-
-
 
         })).addPathPatterns("/**")
                 .excludePathPatterns("/user/register","/user/doLogin","/image/*","/thu/*","/file/fileUpload");

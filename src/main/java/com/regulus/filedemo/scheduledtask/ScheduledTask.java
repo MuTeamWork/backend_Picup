@@ -45,7 +45,7 @@ public class ScheduledTask {
         log.info("检查到过期图片：" + members);
 
         for (String member : members) {
-            String[] parts = member.split("\\."); // 使用 '.' 进行分割，需要转义
+            String[] parts = member.split("\\."); // 使用 '.' 进行分割
             String fidTemple = parts[0]; // 获取 fid
             String uidTemple = parts[1]; // 获取 uid
             Long fid = Long.valueOf(fidTemple); // 将字符串转换为 Long

@@ -5,15 +5,7 @@ import lombok.Data;
 import java.io.Serial;
 import java.io.Serializable;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-11-02
- */
+
 @Data
 public class UpdateUserInfoRequest implements Serializable {
     @Serial

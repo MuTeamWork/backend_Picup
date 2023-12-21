@@ -14,8 +14,6 @@ public class AppException extends RuntimeException{
     }
 
     // 这个是备用的定义异常
-
-
     public AppException(int code, String msg){
         super();
         this.code = code;
