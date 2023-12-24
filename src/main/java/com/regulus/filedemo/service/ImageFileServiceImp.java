@@ -4,10 +4,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.regulus.filedemo.entity.ImageFile;
 
 import com.regulus.filedemo.entity.Setting;
+import com.regulus.filedemo.entity.Tag;
 import com.regulus.filedemo.entity.UserFile;
-import com.regulus.filedemo.mapper.ImageFileMapper;
-import com.regulus.filedemo.mapper.UserFileMapper;
-import com.regulus.filedemo.mapper.UserMapper;
+import com.regulus.filedemo.mapper.*;
 
 import com.regulus.filedemo.util.FileUtil;
 import com.regulus.filedemo.util.SnowflakeExample;
@@ -29,9 +28,6 @@ import java.util.List;
 import java.util.UUID;
 
 
-/**
- *
- */
 
 @Service
 @Slf4j
@@ -60,6 +56,12 @@ public class ImageFileServiceImp {
 
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private TagMapper tagMapper;
+
+    @Resource
+    private TagFileMapper tagFileMapper;
 
     @Resource
     RedisServiceImp redisServiceImp;
@@ -291,7 +293,7 @@ public class ImageFileServiceImp {
                 UserFile userFile = userFileMapper.selectOne(wrapper);
 
                 if (userFile == null) {
-                    //throw new AppException(AppExceptionCodeMsg.FILE_NOT_EXIST);
+                    return;
                 } else {
                     ImageFile file = imageFileMapper.selectById(fid + "");
                     if (file == null) {
@@ -317,6 +319,13 @@ public class ImageFileServiceImp {
 
                     userFileMapper.delete(wrapper);
                     imageFileMapper.deleteById(fid);
+
+
+
+                    tagFileMapper.deleteById(fid);
+
+
+
                     log.info("file successfully deleted: " + file);
                 }
             }
@@ -364,6 +373,18 @@ public class ImageFileServiceImp {
 
     public List<ImageFile> getFileList(Long uid){
         return imageFileMapper.getFileList(uid);
+    }
+
+    public List<Tag> getFileTagList(Long fid){
+        return tagMapper.getFileTagList(fid);
+    }
+
+    public List<ImageFile> selectFidByUidAndTids(Long uid, List<String> tags){
+        return tagMapper.selectFidByUidAndTags(uid,tags);
+    }
+
+    public List<Tag> getFileTagListByUid(Long uid){
+        return tagMapper.getFileTagListByUid(uid);
     }
 
 

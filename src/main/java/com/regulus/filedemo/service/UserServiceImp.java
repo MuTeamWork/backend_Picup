@@ -15,16 +15,6 @@ import com.regulus.filedemo.util.StringCheckerUtil;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-10-30
- */
-
 @Service
 public class UserServiceImp {
     @Resource

@@ -1,14 +1,6 @@
 package com.regulus.filedemo.exception;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-09-20
- */
+
 public enum AppExceptionCodeMsg {
     SUCCESS(200, "success"),
     FAIL(501, "失败"),

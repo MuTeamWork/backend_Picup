@@ -1,4 +1,19 @@
 spring:
+  rabbitmq:
+    host: 10.0.0.5
+    port: 5672
+    username: regulus
+    password: regulus
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      receive-timeout: 30000
+      reply-timeout: 50000
+    exchanges:
+      my-exchange:
+        type: direct
+        durable: true
+
   data:
     redis:
       # Redis数据库索引（默认为0）
@@ -39,6 +54,8 @@ spring:
       max-request-size: 100MB
   main:
     lazy-initialization: false
+
+
 
 
 mybatis-plus:

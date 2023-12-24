@@ -11,13 +11,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- * User实体类
- *
- * @author zsy
- * @version TODO
- * @since 2023-10-30
- */
+
 @Data
 @TableName("tb_user")
 public class User implements Serializable {

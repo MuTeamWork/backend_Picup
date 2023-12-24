@@ -6,15 +6,6 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-11-01
- */
 @Data
 public class ImageFileRequest implements Serializable {
     @Serial

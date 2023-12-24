@@ -10,20 +10,15 @@ import java.io.Serializable;
 
 
 @Data
-@TableName("tb_setting")
-public class Setting implements Serializable {
-
+@TableName("tag_file")
+public class TagFile implements Serializable {
     @Serial
     private static final long serialVersionUID = -5049756437671541193L;
 
-    @TableId(value = "uid")
-    private Long uid;
+    @TableId(value = "fid")
+    private long fid;
 
-    @TableField("exif")
-    private Integer exif;
-
-    @TableField("expire_time")
-    private Integer expireTime;
-
+    @TableField(value = "tid")
+    private long tid;
 
 }

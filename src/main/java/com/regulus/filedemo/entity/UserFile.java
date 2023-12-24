@@ -8,15 +8,7 @@ import lombok.Data;
 import java.io.Serial;
 import java.io.Serializable;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-10-31
- */
+
 @Data
 @TableName("user_file")
 public class UserFile implements Serializable {

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.regulus.filedemo.mapper.TagMapper">
+    <resultMap id="BaseResultMap" type="com.regulus.filedemo.entity.Tag">
+    </resultMap>
+
+    <select id="getFileTagList" resultType="java.lang.String" parameterType="com.regulus.filedemo.entity.Tag">
+        SELECT c.tag
+        FROM  `tb_file` a
+                  LEFT JOIN  `tag_file` b ON a.fid=b.fid
+                  LEFT JOIN `tb_tag` c ON b.tid=c.tid
+        WHERE a.fid = #{fid};
+    </select>
+
+    <select id="selectFidByUidAndTags" resultType="com.regulus.filedemo.entity.ImageFile" parameterType="java.util.Map">
+
+        SELECT DISTINCT f.fid,f.expire_time,f.file,f.thumbnail,f.file_name
+        FROM tb_user u
+                 JOIN user_file uf ON u.uid = uf.uid
+                 JOIN tb_file f ON uf.fid = f.fid
+                 JOIN tag_file tf ON f.fid = tf.fid
+                 JOIN tb_tag t ON tf.tid = t.tid
+        WHERE u.uid = #{uid} AND t.tag IN
+        <foreach collection="tags" item="tag" open="(" close=")" separator=",">
+            #{tag}
+            </foreach>
+
+</select>
+    <select id="getFileTagListByUid" resultType="java.lang.String" parameterType="java.lang.Long">
+        SELECT c.tag
+        FROM  `tb_file` a
+                  LEFT JOIN  `tag_file` b ON a.fid=b.fid
+                  LEFT JOIN `tb_tag` c ON b.tid=c.tid
+                  LEFT JOIN `user_file` d ON d.fid=a.fid
+                  LEFT JOIN `tb_user` e ON e.uid=d.uid
+        WHERE e.uid = #{uid};
+    </select>
+
+
+</mapper>

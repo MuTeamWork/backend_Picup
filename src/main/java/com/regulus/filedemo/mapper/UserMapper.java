@@ -7,15 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-10-30
- */
 
 public interface UserMapper extends BaseMapper<User> {
     Setting querySettingById(@Param("uid") Long uid);

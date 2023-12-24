@@ -9,16 +9,8 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-10-31
- */
 
 @Data
 @TableName("tb_file")
@@ -41,5 +33,9 @@ public class ImageFile implements Serializable {
 
     @TableField("expire_time")
     private String expireTime;
+
+    @TableField(exist = false)
+    private List<Tag> tags;
+
 
 }

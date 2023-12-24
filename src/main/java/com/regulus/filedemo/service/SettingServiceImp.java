@@ -6,15 +6,6 @@ import com.regulus.filedemo.request.SettingRequest;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-/**
- * <p>
- * TODO
- * <p>
- *
- * @author zsy
- * @version TODO
- * @since 2023-11-01
- */
 @Service
 public class SettingServiceImp {
     @Resource
